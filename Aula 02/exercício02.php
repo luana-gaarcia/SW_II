@@ -1,4 +1,3 @@
-
 <?php
 echo "Exercicio 2" . "<br>";
 
