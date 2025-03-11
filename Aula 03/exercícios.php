@@ -4,6 +4,7 @@
 function boasVindas($nome) {
     echo "Bem-vindo, $nome!\n";
 }
+// "\n": Esse é um caractere de nova linha (quebra de linha), para que cada multiplicação seja exibida em uma linha diferente
 
 // 2. Função que recebe dois números e retorna a diferença entre eles
 function diferenca($num1, $num2) {
@@ -12,8 +13,13 @@ function diferenca($num1, $num2) {
 
 // 3. Função que recebe um número e informa se ele é par ou ímpar
 function parOuImpar($numero) {
-    return ($numero % 2 == 0) ? "Par" : "Ímpar";
+    return ($numero % 2 == 0) ? "Par" : "Ímpar"; //? usadado para simplicar em uma linha p operador ternário
 }
+// OU :
+//     return "Par";
+// } else {
+//     return "Ímpar";
+// }
 
 // 4. Função que recebe um número e retorna a tabuada desse número (1 a 10)
 function tabuada($numero) {
@@ -21,6 +27,10 @@ function tabuada($numero) {
         echo "$numero x $i = " . ($numero * $i) . "\n";
     }
 }
+
+// $numero x $i = ": Isso cria uma string que mostra a operação de multiplicação. O $numero será o número para o qual estamos gerando a tabuada, e $i será o número da multiplicação (de 1 a 10).
+//($numero * $i): Esta parte calcula o produto do número fornecido com o valor atual de $i. Ou seja, para cada iteração, ele multiplica o $numero pelo valor de $i (que vai de 1 até 10).
+
 
 // 5. Função que recebe um array de números e retorna a soma de seus elementos
 function somaArray($numeros) {
@@ -35,7 +45,7 @@ function somaArray($numeros) {
 function gerarNumerosAleatorios() {
     $numeros = [];
     for ($i = 0; $i < 10; $i++) {
-        $numeros[] = rand(1, 100); // Gera números aleatórios entre 1 e 100
+        $numeros[] = rand(1, 100); // rand gera números aleatórios entre 1 e 100
     }
     return $numeros;
 }
@@ -45,12 +55,12 @@ function fatorial($numero) {
     if ($numero < 0) return "Número inválido"; // Fatoriais negativos não existem
     $fatorial = 1;
     for ($i = 1; $i <= $numero; $i++) {
-        $fatorial *= $i;
+        $fatorial *= $i;  //A cada iteração, o valor de $fatorial é multiplicado pelo valor de $i
     }
     return $fatorial;
 }
 
-// Exemplo de chamadas das funções
+// Chamadas das funções
 echo "\nTestando funções:\n";
 boasVindas("Maria");
 echo "Diferença: " . diferenca(10, 3) . "\n";
